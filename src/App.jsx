@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 function App() {
-  return <h1>Shopping cart</h1>  
+  return <></>;
 }
 
-export default App
+export default App;
