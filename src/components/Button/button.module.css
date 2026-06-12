@@ -5,6 +5,12 @@
   padding: 0.7rem;
   border-radius: 0.4rem;
 
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-family: 'Inter';
+
+  cursor: pointer;
+}
+
+.primary:hover {
+  background-color: var(--primary-hover);
 }
