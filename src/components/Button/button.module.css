@@ -1,0 +1,10 @@
+.primary {
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+
+  font-size: 0.8rem;
+  font-family: 'Inter';
+}
