@@ -10,6 +10,14 @@ const router = createBrowserRouter([
         index: true,
         element: <h2>Home</h2>,
       },
+      {
+        path: '/shop',
+        element: <div>Shop</div>,
+      },
+      {
+        path: '/cart',
+        element: <div>Cart</div>,
+      },
     ],
   },
 ]);
