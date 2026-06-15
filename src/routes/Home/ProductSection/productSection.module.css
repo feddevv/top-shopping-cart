@@ -1,0 +1,15 @@
+.product-section {
+  padding: 1rem;
+}
+
+.product-section h2 {
+  margin: 0 1rem 1rem 1rem;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+
+  gap: 1rem;
+}
