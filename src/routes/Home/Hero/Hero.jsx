@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './hero.module.css';
-import Button from '../Button/Button';
-import cart from '../../assets/cart.png';
+import Button from '../../../components/Button/Button';
+import cart from '../../../assets/cart.png';
 
 export default function Hero() {
   return (
-    <div className={styles.hero}>
+    <section className={styles.hero}>
       <div>
         <p className={styles.greeting}>WELCOME</p>
         <h2>
@@ -20,6 +20,6 @@ export default function Hero() {
       <div className={styles['img-wrapper']}>
         <img src={cart} alt="" width={400} height="auto" />
       </div>
-    </div>
+    </section>
   );
 }

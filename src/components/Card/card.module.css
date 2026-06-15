@@ -1,0 +1,44 @@
+.card {
+  border: var(--border) 1px solid;
+  display: inline-block;
+  border-radius: 0.5rem;
+}
+
+.card-info {
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+}
+
+.card-title {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.card-price {
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+}
+
+.add-btn {
+  margin-left: auto;
+
+  border: none;
+  padding: 0.1rem 0.4rem;
+  background-color: var(--primary);
+  color: #fff;
+  border-radius: 0.3rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: var(--primary-hover);
+}
