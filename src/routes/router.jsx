@@ -1,8 +1,9 @@
 import { createBrowserRouter } from 'react-router';
 import Root from './Root';
 import Home from './Home/Home';
-import { loader as homeLoader } from './Home/Home';
 import Shop from './Shop/Shop';
+import { loader as homeLoader } from './Home/Home';
+import { loader as shopLoader } from './Shop/Shop';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       {
         path: '/shop',
         element: <Shop />,
+        loader: shopLoader,
       },
       {
         path: '/cart',
