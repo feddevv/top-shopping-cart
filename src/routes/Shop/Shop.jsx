@@ -1,6 +1,6 @@
-import React from 'react';
 import SearchInput from '../../components/SearchInput/SearchInput';
+import styles from './shop.module.css';
 
 export default function Shop() {
-  return <SearchInput placeholder="Search for products" />;
+  return <main className={styles.main}></main>;
 }

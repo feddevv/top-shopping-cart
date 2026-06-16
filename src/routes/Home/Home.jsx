@@ -16,9 +16,9 @@ export default function Main() {
   const data = useLoaderData();
 
   return (
-    <>
+    <main>
       <Hero />
       <ProductSection products={data} />
-    </>
+    </main>
   );
 }
