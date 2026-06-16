@@ -6,7 +6,7 @@ export default function SearchInput({ action, placeholder }) {
     <search className={styles.search}>
       <form action={action} method="GET">
         <label htmlFor="search">
-          <span hidden="true">Search for products</span>
+          <span hidden={true}>Search for products</span>
           <Search aria-hidden="true" />
         </label>
 

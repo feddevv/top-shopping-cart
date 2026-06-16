@@ -27,10 +27,7 @@ export default function Header() {
       <Hamburger isOpen={isOpen} onClick={handleOpenMenu} />
 
       <h1>ShoppingCart</h1>
-      <nav
-        className={`${styles['link-container']} ${isOpen ? styles.open : ''}`}
-        aria-hidden={!isOpen}
-      >
+      <nav className={`${styles['link-container']} ${isOpen ? styles.open : ''}`}>
         {isOpen && <Hamburger isOpen={isOpen} onClick={handleOpenMenu} />}
         {links.map((link) => (
           <NavLink
