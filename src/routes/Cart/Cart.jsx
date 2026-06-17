@@ -1,10 +1,10 @@
 import { useOutletContext } from 'react-router';
 import styles from './cart.module.css';
-import Card from '../../components/Card/Card';
+import Card, { CartCard } from '../../components/Card/Card';
 import Button from '../../components/Button/Button';
 
 export default function Cart() {
-  const { cart } = useOutletContext();
+  const { cart, setCart } = useOutletContext();
 
   const summary = {
     totalPrice: cart.reduce((acc, curr) => acc + curr.price, 0),
@@ -15,12 +15,13 @@ export default function Cart() {
     <main className={styles.main}>
       <div className={styles.products}>
         {cart.map((product) => (
-          <Card
+          <CartCard
             key={product.id}
             img={product.image}
             title={product.title}
             price={product.price}
             onClick={product.onClick}
+            amount={1}
           />
         ))}
       </div>

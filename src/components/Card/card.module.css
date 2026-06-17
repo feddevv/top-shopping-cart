@@ -55,3 +55,64 @@
 .add-btn:hover {
   background-color: var(--primary-hover);
 }
+
+/* Cart Card */
+.cart-card {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+
+  border: var(--border) 1px solid;
+  border-radius: 0.4rem;
+  padding: clamp(0.6rem, 2vw, 1rem);
+}
+
+.cart-card-details {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.top-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.top-cont .card-title {
+  margin: 0 0 0.5rem 0;
+}
+
+.top-cont svg {
+  min-width: 40px;
+}
+
+.bottom-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.cart-card .card-price {
+  margin: 0;
+}
+
+.cart-card .cart-img-container {
+  max-width: 90px;
+  min-width: 50px;
+  background-color: rgb(237, 237, 237);
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+
+.cart-card .cart-img-container img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+
+  object-fit: contain;
+}
