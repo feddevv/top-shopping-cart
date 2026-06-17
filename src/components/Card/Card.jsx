@@ -19,7 +19,7 @@ export default function Card({ title, price, img, onClick }) {
   );
 }
 
-export function CartCard({ title, price, img, amount, onClick }) {
+export function CartCard({ title, price, img, amount, decrement, increment, onChange }) {
   return (
     <article className={styles['cart-card']}>
       <div className={styles['cart-img-container']}>
@@ -36,7 +36,7 @@ export function CartCard({ title, price, img, amount, onClick }) {
         <p className={styles['card-price']}>${price}</p>
 
         <div className={styles['bottom-cont']}>
-          <Counter />
+          <Counter value={amount} decrement={decrement} increment={increment} onChange={onChange} />
         </div>
       </div>
     </article>

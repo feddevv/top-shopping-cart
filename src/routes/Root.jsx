@@ -44,13 +44,23 @@ export default function Root() {
   const handleAddToCart = (product) => {
     const found = cart.find((el) => el.id === product.id);
 
-    if (!found) setCart([...cart, product]);
+    if (!found) {
+      const updated = {
+        ...product,
+        amount: 1,
+      };
+
+      setCart([...cart, updated]);
+    } else {
+      found.amount++;
+      setCart([...cart]);
+    }
   };
 
   return (
     <>
       <Header />
-      <Outlet context={{ cart, handleAddToCart }} />
+      <Outlet context={{ cart, setCart, handleAddToCart }} />
       <Footer />
     </>
   );

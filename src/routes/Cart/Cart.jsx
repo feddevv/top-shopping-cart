@@ -7,8 +7,29 @@ export default function Cart() {
   const { cart, setCart } = useOutletContext();
 
   const summary = {
-    totalPrice: cart.reduce((acc, curr) => acc + curr.price, 0),
-    totalProducts: cart.length,
+    totalPrice: cart.reduce((acc, curr) => acc + curr.price * curr.amount, 0),
+    totalProducts: cart.reduce((acc, curr) => acc + curr.amount, 0),
+  };
+
+  const handleDecrement = (product) => {
+    if (product.amount <= 1) return;
+
+    product.amount--;
+    setCart([...cart]);
+  };
+
+  const handleIncrement = (product) => {
+    product.amount++;
+    setCart([...cart]);
+  };
+
+  const handleOnChange = (e, product) => {
+    let value = Number(e.target.value);
+
+    if (value < 1) value = 1;
+
+    product.amount = value;
+    setCart([...cart]);
   };
 
   return (
@@ -20,8 +41,10 @@ export default function Cart() {
             img={product.image}
             title={product.title}
             price={product.price}
-            onClick={product.onClick}
-            amount={1}
+            decrement={() => handleDecrement(product)}
+            increment={() => handleIncrement(product)}
+            onChange={(e) => handleOnChange(e, product)}
+            amount={product.amount}
           />
         ))}
       </div>
