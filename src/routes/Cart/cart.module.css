@@ -1,0 +1,18 @@
+.main {
+  padding: 0.8rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: center;
+}
+
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: 2fr 1fr;
+  }
+}
