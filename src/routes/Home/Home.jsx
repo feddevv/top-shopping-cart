@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from './Hero/Hero';
 import ProductSection from './ProductSection/ProductSection';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useOutletContext } from 'react-router';
 
 export async function loader() {
   const response = await fetch('https://fakestoreapi.com/products');
@@ -14,11 +14,12 @@ export async function loader() {
 
 export default function Main() {
   const data = useLoaderData();
+  const { handleAddToCart } = useOutletContext();
 
   return (
     <main>
       <Hero />
-      <ProductSection products={data} />
+      <ProductSection products={data} handleAddToCart={handleAddToCart} />
     </main>
   );
 }

@@ -14,13 +14,7 @@ export async function loader() {
 
 export default function Shop() {
   const products = useLoaderData();
-  const { cart, setCart } = useOutletContext();
-
-  const handleClick = (product) => {
-    const found = cart.find((el) => el.id === product.id);
-
-    if (!found) setCart([...cart, product]);
-  };
+  const { cart, handleAddToCart } = useOutletContext();
 
   return (
     <main className={styles.main}>
@@ -33,7 +27,7 @@ export default function Shop() {
             title={product.title}
             price={product.price}
             img={product.image}
-            onClick={() => handleClick(product)}
+            onClick={() => handleAddToCart(product)}
           />
         ))}
       </section>

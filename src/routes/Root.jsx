@@ -40,10 +40,17 @@ const mockProducts = [
 
 export default function Root() {
   const [cart, setCart] = useState([]);
+
+  const handleAddToCart = (product) => {
+    const found = cart.find((el) => el.id === product.id);
+
+    if (!found) setCart([...cart, product]);
+  };
+
   return (
     <>
       <Header />
-      <Outlet context={{ cart, setCart }} />
+      <Outlet context={{ cart, handleAddToCart }} />
       <Footer />
     </>
   );
