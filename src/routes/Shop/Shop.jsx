@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useOutletContext } from 'react-router';
 import SearchInput from '../../components/SearchInput/SearchInput';
 import Card from '../../components/Card/Card';
 import styles from './shop.module.css';
@@ -14,13 +14,27 @@ export async function loader() {
 
 export default function Shop() {
   const products = useLoaderData();
+  const { cart, setCart } = useOutletContext();
+
+  const handleClick = (product) => {
+    const found = cart.find((el) => el.id === product.id);
+
+    if (!found) setCart([...cart, product]);
+  };
+
   return (
     <main className={styles.main}>
       <SearchInput placeholder={'Search for products'} />
 
       <section className={styles.products}>
         {products.map((product) => (
-          <Card key={product.id} title={product.title} price={product.price} img={product.image} />
+          <Card
+            key={product.id}
+            title={product.title}
+            price={product.price}
+            img={product.image}
+            onClick={() => handleClick(product)}
+          />
         ))}
       </section>
     </main>

@@ -13,7 +13,7 @@ export default function Cart() {
           {cart.map((product) => (
             <Card
               key={product.id}
-              img={product.img}
+              img={product.image}
               title={product.title}
               price={product.price}
               onClick={product.onClick}

@@ -39,11 +39,11 @@ const mockProducts = [
 ];
 
 export default function Root() {
-  const [cart, setCart] = useState(mockProducts);
+  const [cart, setCart] = useState([]);
   return (
     <>
       <Header />
-      <Outlet context={{ cart }} />
+      <Outlet context={{ cart, setCart }} />
       <Footer />
     </>
   );
