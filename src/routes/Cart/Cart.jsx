@@ -44,14 +44,11 @@ export default function Cart() {
         {cart.map((product) => (
           <CartCard
             key={product.id}
-            img={product.image}
-            title={product.title}
-            price={product.price}
+            product={product}
             decrement={() => handleDecrement(product)}
             increment={() => handleIncrement(product)}
             onChange={(e) => handleOnChange(e, product)}
             onDelete={() => handleDelete(product.id)}
-            amount={product.amount}
           />
         ))}
       </div>

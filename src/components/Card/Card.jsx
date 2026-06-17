@@ -19,24 +19,29 @@ export default function Card({ title, price, img, onClick }) {
   );
 }
 
-export function CartCard({ title, price, img, amount, decrement, increment, onChange, onDelete }) {
+export function CartCard({ product, decrement, increment, onChange, onDelete }) {
   return (
     <article className={styles['cart-card']}>
       <div className={styles['cart-img-container']}>
-        <img src={img} alt="" />
+        <img src={product.image} alt="" />
       </div>
 
       <div className={styles['cart-card-details']}>
         <div className={styles['top-cont']}>
-          <h3 className={styles['card-title']}>{title}</h3>
+          <h3 className={styles['card-title']}>{product.title}</h3>
 
           <Trash onClick={onDelete} />
         </div>
 
-        <p className={styles['card-price']}>${price}</p>
+        <p className={styles['card-price']}>${product.price}</p>
 
         <div className={styles['bottom-cont']}>
-          <Counter value={amount} decrement={decrement} increment={increment} onChange={onChange} />
+          <Counter
+            value={product.amount}
+            decrement={decrement}
+            increment={increment}
+            onChange={onChange}
+          />
         </div>
       </div>
     </article>
