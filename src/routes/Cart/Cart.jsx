@@ -29,7 +29,7 @@ export default function Cart() {
         <h2>Order Summary</h2>
         <div className={styles['summary-details']}>
           <p>
-            Total price: <span>${summary.totalPrice}</span>
+            Total price: <span>${summary.totalPrice.toFixed(2)}</span>
           </p>
           <p>
             Total amount: <span>{summary.totalProducts}</span>
