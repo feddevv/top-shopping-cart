@@ -11,6 +11,30 @@
   justify-items: center;
 }
 
+.summary {
+  border: var(--border) 1px solid;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  align-self: self-start;
+}
+
+.summary h2 {
+  margin-bottom: 0.6rem;
+}
+
+.summary-details p {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border);
+  margin: 1rem 0;
+}
+
 @media (min-width: 768px) {
   .main {
     grid-template-columns: 2fr 1fr;
