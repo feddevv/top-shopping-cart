@@ -32,6 +32,12 @@ export default function Cart() {
     setCart([...cart]);
   };
 
+  const handleDelete = (id) => {
+    const updated = cart.filter((el) => el.id !== id);
+
+    setCart(updated);
+  };
+
   return (
     <main className={styles.main}>
       <div className={styles.products}>
@@ -44,6 +50,7 @@ export default function Cart() {
             decrement={() => handleDecrement(product)}
             increment={() => handleIncrement(product)}
             onChange={(e) => handleOnChange(e, product)}
+            onDelete={() => handleDelete(product.id)}
             amount={product.amount}
           />
         ))}
