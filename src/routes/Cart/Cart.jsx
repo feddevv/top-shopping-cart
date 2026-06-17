@@ -13,20 +13,17 @@ export default function Cart() {
 
   return (
     <main className={styles.main}>
-      <section>
-        <h2>You Cart</h2>
-        <div className={styles.products}>
-          {cart.map((product) => (
-            <Card
-              key={product.id}
-              img={product.image}
-              title={product.title}
-              price={product.price}
-              onClick={product.onClick}
-            />
-          ))}
-        </div>
-      </section>
+      <div className={styles.products}>
+        {cart.map((product) => (
+          <Card
+            key={product.id}
+            img={product.image}
+            title={product.title}
+            price={product.price}
+            onClick={product.onClick}
+          />
+        ))}
+      </div>
 
       <section className={styles.summary}>
         <h2>Order Summary</h2>

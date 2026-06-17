@@ -3,12 +3,14 @@
 
   display: grid;
   grid-template-columns: 1fr;
+  gap: 1.4rem;
 }
 
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-items: center;
+  gap: 1rem;
 }
 
 .summary {
