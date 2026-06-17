@@ -23,14 +23,14 @@ export function CartCard({ product, decrement, increment, onChange, onDelete }) 
   return (
     <article className={styles['cart-card']}>
       <div className={styles['cart-img-container']}>
-        <img src={product.image} alt="" />
+        <img src={product.image} alt={product.title} />
       </div>
 
       <div className={styles['cart-card-details']}>
         <div className={styles['top-cont']}>
           <h3 className={styles['card-title']}>{product.title}</h3>
 
-          <Trash onClick={onDelete} />
+          <Trash />
         </div>
 
         <p className={styles['card-price']}>${product.price}</p>
