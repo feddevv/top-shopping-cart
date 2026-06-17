@@ -5,7 +5,6 @@ import Button from '../../components/Button/Button';
 
 export default function Cart() {
   const { cart, setCart } = useOutletContext();
-
   const summary = {
     totalPrice: cart.reduce((acc, curr) => acc + curr.price * curr.amount, 0),
     totalProducts: cart.reduce((acc, curr) => acc + curr.amount, 0),

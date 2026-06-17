@@ -88,6 +88,13 @@
 
 .top-cont svg {
   min-width: 40px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.top-cont svg:hover {
+  color: red;
+  transform: rotate(10deg) scale(1.1);
 }
 
 .bottom-cont {
