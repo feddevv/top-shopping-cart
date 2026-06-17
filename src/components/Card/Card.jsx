@@ -30,7 +30,9 @@ export function CartCard({ product, decrement, increment, onChange, onDelete }) 
         <div className={styles['top-cont']}>
           <h3 className={styles['card-title']}>{product.title}</h3>
 
-          <Trash />
+          <button onClick={onDelete} data-testid="delete-button">
+            <Trash />
+          </button>
         </div>
 
         <p className={styles['card-price']}>${product.price}</p>
