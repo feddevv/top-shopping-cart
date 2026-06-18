@@ -21,7 +21,7 @@ export default function Card({ title, price, img, onClick }) {
 
 export function CartCard({ product, decrement, increment, onChange, onDelete }) {
   return (
-    <article className={styles['cart-card']}>
+    <article className={styles['cart-card']} data-testid="cart-card">
       <div className={styles['cart-img-container']}>
         <img src={product.image} alt={product.title} />
       </div>
