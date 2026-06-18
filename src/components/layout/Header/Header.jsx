@@ -15,7 +15,7 @@ const links = [
   },
 ];
 
-export default function Header() {
+export default function Header({ productsAmount }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenMenu = () => {
@@ -44,6 +44,7 @@ export default function Header() {
         className={({ isActive }) => `${styles.cart} ${isActive ? styles.open : ''}`}
       >
         <ShoppingCart />
+        {productsAmount > 0 && <span className={styles['products-amount']}>{productsAmount}</span>}
       </NavLink>
     </header>
   );

@@ -40,6 +40,7 @@ const mockProducts = [
 
 export default function Root() {
   const [cart, setCart] = useState([]);
+  const productsAmount = cart.reduce((acc, curr) => acc + curr.amount, 0);
 
   const handleAddToCart = (product) => {
     const found = cart.find((el) => el.id === product.id);
@@ -59,7 +60,7 @@ export default function Root() {
 
   return (
     <>
-      <Header />
+      <Header productsAmount={productsAmount} />
       <Outlet context={{ cart, setCart, handleAddToCart }} />
       <Footer />
     </>

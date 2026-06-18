@@ -54,6 +54,7 @@
 
 .cart {
   color: var(--text-primary);
+  position: relative;
 }
 
 .cart:hover,
@@ -63,6 +64,22 @@
 
 .cart.open {
   color: var(--primary);
+}
+
+.cart .products-amount {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: var(--primary);
+  color: white;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
