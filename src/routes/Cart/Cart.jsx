@@ -40,16 +40,20 @@ export default function Cart() {
   return (
     <main className={styles.main}>
       <div className={styles.products}>
-        {cart.map((product) => (
-          <CartCard
-            key={product.id}
-            product={product}
-            decrement={() => handleDecrement(product)}
-            increment={() => handleIncrement(product)}
-            onChange={(e) => handleOnChange(e, product)}
-            onDelete={() => handleDelete(product.id)}
-          />
-        ))}
+        {cart.length ? (
+          cart.map((product) => (
+            <CartCard
+              key={product.id}
+              product={product}
+              decrement={() => handleDecrement(product)}
+              increment={() => handleIncrement(product)}
+              onChange={(e) => handleOnChange(e, product)}
+              onDelete={() => handleDelete(product.id)}
+            />
+          ))
+        ) : (
+          <p className={styles['empty-cart-p']}>Your cart is empty</p>
+        )}
       </div>
 
       <section className={styles.summary}>
