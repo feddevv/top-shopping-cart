@@ -29,8 +29,9 @@ export default function Header({ productsAmount }) {
       <h1>ShoppingCart</h1>
       <nav className={`${styles['link-container']} ${isOpen ? styles.open : ''}`}>
         {isOpen && <Hamburger isOpen={isOpen} onClick={handleOpenMenu} />}
-        {links.map((link) => (
+        {links.map((link, i) => (
           <NavLink
+            key={i}
             to={link.path}
             className={({ isActive }) => `${styles.link} ${isActive ? styles.open : ''}`}
             tabIndex={!isOpen ? -1 : 0}
