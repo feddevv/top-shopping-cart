@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './hero.module.css';
 import Button from '../../../components/Button/Button';
 import cart from '../../../assets/cart.png';
+import { NavLink } from 'react-router';
 
 export default function Hero() {
   return (
@@ -14,7 +15,9 @@ export default function Hero() {
         <p className={styles.description}>
           Discover amazing products <br /> at best prices
         </p>
-        <Button type={'primary'}>Shop Now</Button>
+        <NavLink to={'/shop'}>
+          <Button type={'primary'}>Shop Now</Button>
+        </NavLink>
       </div>
 
       <div className={styles['img-wrapper']}>
