@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from './Hero/Hero';
 import ProductSection from './ProductSection/ProductSection';
-import { useLoaderData, useOutletContext } from 'react-router';
+import { useLoaderData, useNavigation, useOutletContext } from 'react-router';
 
 export async function loader() {
   const response = await fetch('https://fakestoreapi.com/products');

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Header from '../components/layout/Header/Header';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 import Footer from '../components/layout/Footer/Footer';
 import PopUp from '../components/PopUp/PopUp';
+import Spinner from '../components/Spinner/Spinner';
 
 export default function Root() {
   const [cart, setCart] = useState([]);
@@ -34,7 +35,11 @@ export default function Root() {
   return (
     <>
       <Header productsAmount={productsAmount} />
-      <Outlet context={{ cart, setCart, handleAddToCart }} />
+      {useNavigation().state === 'loading' ? (
+        <Spinner />
+      ) : (
+        <Outlet context={{ cart, setCart, handleAddToCart }} />
+      )}
       <Footer />
 
       {isPopUpOpen && (
