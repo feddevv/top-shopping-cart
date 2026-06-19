@@ -2,10 +2,16 @@ import React, { useState } from 'react';
 import Header from '../components/layout/Header/Header';
 import { Outlet } from 'react-router';
 import Footer from '../components/layout/Footer/Footer';
+import PopUp from '../components/PopUp/PopUp';
 
 export default function Root() {
   const [cart, setCart] = useState([]);
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   const productsAmount = cart.reduce((acc, curr) => acc + curr.amount, 0);
+
+  const handleOnClose = (product) => {
+    setIsPopUpOpen(false);
+  };
 
   const handleAddToCart = (product) => {
     const found = cart.find((el) => el.id === product.id);
@@ -21,6 +27,8 @@ export default function Root() {
       found.amount++;
       setCart([...cart]);
     }
+
+    setIsPopUpOpen(true);
   };
 
   return (
@@ -28,6 +36,10 @@ export default function Root() {
       <Header productsAmount={productsAmount} />
       <Outlet context={{ cart, setCart, handleAddToCart }} />
       <Footer />
+
+      {isPopUpOpen && (
+        <PopUp key={crypto.randomUUID()} isOpen={isPopUpOpen} onClose={handleOnClose} />
+      )}
     </>
   );
 }
