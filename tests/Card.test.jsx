@@ -15,14 +15,14 @@ describe('Card component', () => {
 
     expect(screen.getByRole('heading', { name: 'Test title' })).toBeInTheDocument();
     expect(screen.getByText(/Test price/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: '+' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Add Test title to cart' })).toBeInTheDocument();
   });
 
   it('should call onClick function when clicked', async () => {
     const user = userEvent.setup();
 
     render(<Card title={card.title} price={card.price} onClick={card.onClick} />);
-    await user.click(screen.getByRole('button', { name: '+' }));
+    await user.click(screen.getByRole('button', { name: 'Add Test title to cart' }));
 
     expect(card.onClick).toHaveBeenCalled();
   });

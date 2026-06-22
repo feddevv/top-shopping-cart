@@ -84,7 +84,7 @@ describe('Cart component', () => {
     const user = userEvent.setup();
 
     render(<RouterStub initialEntries={['/shop']} />);
-    const increment = screen.getAllByRole('button', { name: '+' })[0];
+    const increment = screen.getAllByRole('button', { name: 'Increase product' })[0];
     await user.click(increment);
 
     expect(screen.getAllByRole('spinbutton')[0]).toHaveValue(3);
@@ -96,7 +96,7 @@ describe('Cart component', () => {
     const user = userEvent.setup();
 
     render(<RouterStub initialEntries={['/shop']} />);
-    const decrement = screen.getAllByRole('button', { name: '–' })[0];
+    const decrement = screen.getAllByRole('button', { name: 'Decrease product' })[0];
     await user.click(decrement);
     await user.click(decrement);
 
@@ -109,7 +109,7 @@ describe('Cart component', () => {
     const user = userEvent.setup();
 
     render(<RouterStub initialEntries={['/shop']} />);
-    const decrement = screen.getAllByRole('button', { name: '–' })[1];
+    const decrement = screen.getAllByRole('button', { name: 'Decrease product' })[1];
     await user.click(decrement);
     await user.click(decrement);
 

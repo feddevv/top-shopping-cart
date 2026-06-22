@@ -14,8 +14,8 @@ describe('Counter component', () => {
   it('should render the initial counter', () => {
     render(<Counter {...counterData} />);
 
-    expect(screen.getByRole('button', { name: '–' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: '+' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Decrease product' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Increase product' })).toBeInTheDocument();
     expect(screen.getByRole('spinbutton', { value: counterData.value })).toBeInTheDocument();
   });
 
@@ -23,8 +23,8 @@ describe('Counter component', () => {
     const user = userEvent.setup();
 
     render(<Counter {...counterData} />);
-    const decrementBtn = screen.getByRole('button', { name: '–' });
-    const incrementBtn = screen.getByRole('button', { name: '+' });
+    const decrementBtn = screen.getByRole('button', { name: 'Decrease product' });
+    const incrementBtn = screen.getByRole('button', { name: 'Increase product' });
     await user.click(decrementBtn);
     await user.click(incrementBtn);
 

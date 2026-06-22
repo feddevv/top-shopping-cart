@@ -54,8 +54,8 @@ describe('CartCard component', () => {
       />,
     );
 
-    const decrement = screen.getByRole('button', { name: '–' });
-    const increment = screen.getByRole('button', { name: '+' });
+    const decrement = screen.getByRole('button', { name: 'Decrease product' });
+    const increment = screen.getByRole('button', { name: 'Increase product' });
 
     await user.click(decrement);
     await user.click(increment);
