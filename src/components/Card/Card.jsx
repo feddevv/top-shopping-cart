@@ -49,8 +49,12 @@ export function CartCard({ product, decrement, increment, onChange, onDelete }) 
         <div className={styles['top-cont']}>
           <h3 className={styles['card-title']}>{product.title}</h3>
 
-          <button onClick={onDelete} data-testid="delete-button">
-            <Trash />
+          <button
+            onClick={onDelete}
+            data-testid="delete-button"
+            aria-label={`Delete ${product.title}`}
+          >
+            <Trash aria-hidden />
           </button>
         </div>
 
