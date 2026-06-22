@@ -1,8 +1,19 @@
+import { useState } from 'react';
 import Counter from '../Counter.jsx/Counter';
 import styles from './card.module.css';
 import { Trash } from 'lucide-react';
 
 export default function Card({ title, price, img, onClick }) {
+  const [announcement, setAnnouncement] = useState('');
+
+  const handleAddToCart = () => {
+    onClick();
+
+    setAnnouncement('Added to cart');
+
+    setTimeout(() => setAnnouncement(''), 100);
+  };
+
   return (
     <article className={styles.card}>
       <div className={styles['img-container']}>
@@ -11,9 +22,17 @@ export default function Card({ title, price, img, onClick }) {
       <div className={styles['card-info']}>
         <h3 className={styles['card-title']}>{title}</h3>
         <p className={styles['card-price']}>${price}</p>
-        <button className={styles['add-btn']} onClick={onClick}>
+        <button
+          aria-label={`Add ${title} to cart`}
+          className={styles['add-btn']}
+          onClick={handleAddToCart}
+        >
           +
         </button>
+
+        <div aria-live="polite" className={styles['visually-hidden']}>
+          {announcement}
+        </div>
       </div>
     </article>
   );
