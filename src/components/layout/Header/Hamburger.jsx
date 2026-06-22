@@ -7,7 +7,7 @@ export default function Hamburger({ isOpen, onClick }) {
     <button
       className={`${styles.hamburger} ${isOpen ? styles.open : ''}`}
       onClick={onClick}
-      aria-label="Menu"
+      aria-label={'Menu'}
     >
       <span className={styles.bar}></span>
       <span className={styles.bar}></span>

@@ -21,10 +21,10 @@ export async function loader({ request }) {
 
 export default function Shop() {
   const { data: products, q } = useLoaderData();
-  const { handleAddToCart } = useOutletContext();
+  const { handleAddToCart, isOpen } = useOutletContext();
 
   return (
-    <main className={styles.main}>
+    <main inert={isOpen} className={styles.main}>
       <SearchInput placeholder={'Search for products'} defaultValue={q} />
 
       <section className={styles.products}>

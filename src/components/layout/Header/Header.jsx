@@ -16,8 +16,7 @@ const links = [
   },
 ];
 
-export default function Header({ productsAmount }) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Header({ isOpen, setIsOpen, productsAmount }) {
   const isMobile = useIsMobile();
   const isFocusable = !isMobile || isOpen;
 

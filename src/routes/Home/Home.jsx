@@ -14,10 +14,10 @@ export async function loader() {
 
 export default function Main() {
   const data = useLoaderData();
-  const { handleAddToCart } = useOutletContext();
+  const { handleAddToCart, isOpen } = useOutletContext();
 
   return (
-    <main>
+    <main inert={isOpen}>
       <Hero />
       <ProductSection products={data} handleAddToCart={handleAddToCart} />
     </main>

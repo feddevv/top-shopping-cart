@@ -4,7 +4,7 @@ import Card, { CartCard } from '../../components/Card/Card';
 import Button from '../../components/Button/Button';
 
 export default function Cart() {
-  const { cart, setCart } = useOutletContext();
+  const { cart, setCart, isOpen } = useOutletContext();
   const summary = {
     totalPrice: cart.reduce((acc, curr) => acc + curr.price * curr.amount, 0),
     totalProducts: cart.reduce((acc, curr) => acc + curr.amount, 0),
@@ -38,7 +38,7 @@ export default function Cart() {
   };
 
   return (
-    <main className={styles.main}>
+    <main inert={isOpen} className={styles.main}>
       <div className={styles.products}>
         {cart.length ? (
           cart.map((product) => (

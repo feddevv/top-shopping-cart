@@ -6,6 +6,7 @@ import PopUp from '../components/PopUp/PopUp';
 import Spinner from '../components/Spinner/Spinner';
 
 export default function Root() {
+  const [isOpen, setIsOpen] = useState(false);
   const [cart, setCart] = useState([]);
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   const productsAmount = cart.reduce((acc, curr) => acc + curr.amount, 0);
@@ -34,11 +35,11 @@ export default function Root() {
 
   return (
     <>
-      <Header productsAmount={productsAmount} />
+      <Header productsAmount={productsAmount} isOpen={isOpen} setIsOpen={setIsOpen} />
       {useNavigation().state === 'loading' ? (
         <Spinner />
       ) : (
-        <Outlet context={{ cart, setCart, handleAddToCart }} />
+        <Outlet context={{ cart, setCart, handleAddToCart, isOpen }} />
       )}
       <Footer />
 
