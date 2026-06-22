@@ -45,8 +45,9 @@ export default function Header({ isOpen, setIsOpen, productsAmount }) {
       <NavLink
         to={'/cart'}
         className={({ isActive }) => `${styles.cart} ${isActive ? styles.open : ''}`}
+        aria-label="Cart"
       >
-        <ShoppingCart />
+        <ShoppingCart aria-hidden />
         {productsAmount > 0 && <span className={styles['products-amount']}>{productsAmount}</span>}
       </NavLink>
     </header>
