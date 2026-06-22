@@ -30,7 +30,7 @@ export default function Card({ title, price, img, onClick }) {
           +
         </button>
 
-        <div aria-live="polite" className={styles['visually-hidden']}>
+        <div aria-live="polite" className={'visually-hidden'}>
           {announcement}
         </div>
       </div>
