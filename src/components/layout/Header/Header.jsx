@@ -3,6 +3,7 @@ import Hamburger from './Hamburger';
 import styles from './header.module.css';
 import { NavLink } from 'react-router';
 import { ShoppingCart } from 'lucide-react';
+import useIsMobile from '../../../hooks/useIsMobile';
 
 const links = [
   {
@@ -17,6 +18,8 @@ const links = [
 
 export default function Header({ productsAmount }) {
   const [isOpen, setIsOpen] = useState(false);
+  const isMobile = useIsMobile();
+  const isFocusable = !isMobile || isOpen;
 
   const handleOpenMenu = () => {
     setIsOpen(!isOpen);
@@ -34,7 +37,7 @@ export default function Header({ productsAmount }) {
             key={i}
             to={link.path}
             className={({ isActive }) => `${styles.link} ${isActive ? styles.open : ''}`}
-            tabIndex={!isOpen ? -1 : 0}
+            tabIndex={isFocusable ? 0 : -1}
           >
             {link.title}
           </NavLink>
