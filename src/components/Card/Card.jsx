@@ -15,7 +15,7 @@ export default function Card({ title, price, img, onClick }) {
   };
 
   return (
-    <article className={styles.card}>
+    <article className={styles.card} data-testid="card">
       <div className={styles['img-container']}>
         <img src={img} alt="" />
       </div>
