@@ -1,9 +1,9 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import { defineConfig, globalIgnores } from 'eslint/config'
-import vitestPlugin from 'eslint-plugin-vitest'
+import js from '@eslint/js';
+import globals from 'globals';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import vitestPlugin from 'eslint-plugin-vitest';
 
 export default defineConfig([
   globalIgnores(['dist']),
@@ -15,11 +15,17 @@ export default defineConfig([
       reactRefresh.configs.vite,
     ],
     languageOptions: {
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        ...vitestPlugin.environments.env.globals,
+      },
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
+    plugins: {
+      vitest: vitestPlugin,
+    },
     rules: {
-      ...vitestPlugin.configs.recommended.rules
-    }
+      ...vitestPlugin.configs.recommended.rules,
+    },
   },
-])
+]);
